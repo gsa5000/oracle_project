@@ -8,21 +8,6 @@ qty int,
 img varchar2(1000),
 review_count int
 );
-alter table product_info modify descript varchar2(1000);
-----------------------------------------------만들어야 됨
-create table categories
-(
-    category_code varchar2(30) primary key,
-    category_name varchar2(30)
-);
-
---create table 
-alter table product_info modify img varchar2(1000);
-
---select * from product_info where category 
-
-select * from product_info where prod_name like '%&search%';--이름으로 상품 찾기
-----------------------------------------------------
 
 insert into product_info (prod_code,category,prod_name,price,qty) values('35064996','351402000','다용도 실내화 푹신한 쿠션 욕실화 EVA',5700,99990); --상품데이터 15개
 insert into product_info (prod_code,category,prod_name,price,qty) values('35064959','351402000','다용도 실내화 푹신한 쿠션 욕실화 EVA',5700,99990);
@@ -56,21 +41,21 @@ update product_info set img= 'https://cdn1.domeggook.com/upload/item/2023/03/30/
 update product_info set img = 'https://cdn1.domeggook.com/upload/item/2023/03/30/1680132014FA71364D9C53508B966E81/1680132014FA71364D9C53508B966E81_thumb600.jpg?hash=be160415c01d3089c007a27d278c6a28' where prod_code='35066262';
 update product_info set img ='https://cdn1.domeggook.com/upload/item/2023/03/30/16801319966F9F6F892404F7CDD84991/16801319966F9F6F892404F7CDD84991_thumb600.jpg?hash=3a0159fef0239cdb02f486c382820a98' where prod_code='35066252';
 
-update product_info set descript='상품설명1',review_count=323 where prod_code='35064996';
-update product_info set descript='상품설명1',review_count=341 where prod_code='35064959';
-update product_info set descript='상품설명1',review_count=45 where  prod_code='35064937';
-update product_info set descript='상품설명1',review_count=56 where  prod_code='35064825';
-update product_info set descript='상품설명1',review_count=43 where  prod_code='35064791';
-update product_info set descript='상품설명1',review_count=56 where  prod_code='35064787';
-update product_info set descript='상품설명1',review_count=24 where  prod_code='35064786';
-update product_info set descript='상품설명1',review_count=56 where  prod_code='35064783';
-update product_info set descript='상품설명1',review_count=65 where  prod_code='35064776';
-update product_info set descript='상품설명1',review_count=67 where  prod_code='35064760';
-update product_info set descript='상품설명1',review_count=34 where  prod_code='35065186';
-update product_info set descript='상품설명1',review_count=56 where  prod_code='35065314';
-update product_info set descript='상품설명1',review_count=23 where  prod_code='35065710';
-update product_info set descript='상품설명1',review_count=56 where  prod_code='35066262';
-update product_info set descript='상품설명1',review_count=34 where  prod_code='35066252';
+update product_info set review_count=323 where prod_code='35064996';
+update product_info set review_count=341 where prod_code='35064959';
+update product_info set review_count=45 where  prod_code='35064937';
+update product_info set review_count=56 where  prod_code='35064825';
+update product_info set review_count=43 where  prod_code='35064791';
+update product_info set review_count=56 where  prod_code='35064787';
+update product_info set review_count=24 where  prod_code='35064786';
+update product_info set review_count=56 where  prod_code='35064783';
+update product_info set review_count=65 where  prod_code='35064776';
+update product_info set review_count=67 where  prod_code='35064760';
+update product_info set review_count=34 where  prod_code='35065186';
+update product_info set review_count=56 where  prod_code='35065314';
+update product_info set review_count=23 where  prod_code='35065710';
+update product_info set review_count=56 where  prod_code='35066262';
+update product_info set review_count=34 where  prod_code='35066252';
 
 insert into product_info (prod_code,category,prod_name,price,qty) values('35066191','660503000','BOTTA 여름 피크닉 헬스 목욕 스포츠 학생 운동 파우',6700,3996);
 insert into product_info (prod_code,category,prod_name,price,qty) values('35066182','541017000','물방울 쿨방석 이중마개 아이스 물방석',15400,999);
