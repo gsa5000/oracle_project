@@ -78,3 +78,62 @@ delete from product_info where prod_code= '35064755';
 
 
 select * from product_info; 
+
+
+CREATE TABLE Clients
+(
+    IDENTY VARCHAR2(100) PRIMARY KEY,
+    PHONE VARCHAR2(100) UNIQUE,
+    ADDRESS VARCHAR2(100) NOT NULL,
+    GENDER VARCHAR2(8),
+    PAYMENT VARCHAR2(100) NOT NULL,
+    GRADE int
+);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('01','010-4568-7894','대구광역시 수성구 천을로 70','남','카드',1);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('02','010-1234-5678','서울특별시 강남구 역삼동','여','현금',2);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('03','010-1111-2222','부산광역시 연제구 연산동','남','카드',3);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('04','010-3333-4444','대전광역시 유성구 가정북로 76','여','카드',1);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('05','010-5555-6666','광주광역시 동구 필문대로 365','남','현금',2);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('06','010-7777-8888','인천광역시 서구 검단로 7','여','카드',3);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('07','010-9999-0000','울산광역시 남구 신정로 20','남','현금',1);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('08','010-2222-3333','대구광역시 달서구 상인북로 60','여','카드',2);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('09','010-4444-5555','부산광역시 해운대구 해운대로 97','남','현금',3);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('10','010-6666-7777','서울특별시 서초구 강남대로 407','여','카드',1);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('11','010-8888-9999','광주광역시 서구 상무대로 77','남','현금',2);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('12','010-1212-3434','대전광역시 동구 대전로 98','여','카드',3);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('13','010-4545-6767','여수시 국사봉길 11','남','카드',1);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('14','010-9898-7878','인천광역시 중구 참외전로 111','여','현금',2);
+INSERT INTO Clients (IDENTY,PHONE,ADDRESS,GENDER,PAYMENT,GRADE) VALUES('15','010-1212-2828','대구광역시 수성구 지범로 27','남','카드',3);
+
+SELECT * FROM Clients;
+commit;
+
+
+UPDATE Clients SET phone ='010-8989-8787' WHERE IDENTY = '14';
+UPDATE Clients SET payment ='현금' WHERE IDENTY = '15';
+UPDATE Clients SET address ='여수시 국사봉길 22' WHERE IDENTY = '13';
+UPDATE Clients SET grade ='2' WHERE IDENTY = '12';
+UPDATE Clients SET gender ='여' WHERE IDENTY = '11';
+
+delete from Clients where identy=15;
+delete from Clients where identy=14;
+delete from Clients where identy=13;
+delete from Clients where identy=12;
+delete from Clients where identy=11; 
+
+select * from  Clients;
+
+CREATE TABLE products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR2(255) NOT NULL,
+  product_price INT NOT NULL,
+  delivery_speed VARCHAR2(10) DEFAULT 'normal' not null,
+  delivery_location VARCHAR2(20)DEFAULT 'none' NOT NULL ,
+  CONSTRAINT check_delivery_location CHECK (delivery_location = 'none' OR delivery_location = 'rural area' OR delivery_location = 'mountainous area'),
+  payment_method VARCHAR2(10) NOT NULL,
+  discount_rate FLOAT DEFAULT 0.0 NOT NULL ,
+  delivery_speed_discount FLOAT DEFAULT 0.0 NOT NULL ,
+  delivery_location_discount FLOAT DEFAULT 0.0 NOT NULL ,
+  payment_method_discount FLOAT DEFAULT 0.0 NOT NULL 
+);
+ 
